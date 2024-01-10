@@ -63,3 +63,48 @@ _ **Advantages of LINQ** _
 10. LINQ supports filtering, sorting, ordering, grouping.
 11. It makes easy debugging because it is integrated with C# language.
 12. It provides easy transformation means you can easily convert one data type into another data type like transforming SQL data into XML data.
+
+_ **LINQ TO SQL in C#** _
+
+1. LINQ in C# is used to work with data access from data sources such as objects, data sets, SQL Server, and XML etc.
+
+2. Previously Microsoft introduced SQL query language to interact with only one data source called SQL Server database.
+
+3. But now Microsoft introduced LINQ query language than can be used wide variety of data sources.
+
+4. LINQ is divided into several categories or you can say that there are different type of LINQ.
+
+_ **Types of LINQ** _
+
+1. LINQ to objects (Arrays, Collections)
+2. LINQ to Databases ( LINQ to SQL, LINQ to ADO.NET, LINQ To Entities)
+3. LINQ to XML (XML Files)
+
+LINQ to Databases
+
+- LINQ to SQL
+
+1. It is a query language used in C# programming language, introduced in DotNet Framework 3.5
+2. It is used for working with relational database management system eg – SQL Server.
+3. But when we talk about **LINQ to Entites** then we can use different relational database management system like SQL Server, Orale and so on.
+4. It is not just only about querying the data but it also allows us to perform CRUD operations like insert, update, delete and read operations from database.
+
+C – Create – Insert
+
+R – Read – Select
+
+U – Update – Update
+
+D – Delete – Delete
+
+1. By using LINQ to SQL we can also work with stored procedures.
+2. We have already a concept of ADO.NET by which we can interact with SQL Server with the help of ADO.NET.
+3. Then why we should have to use LINQ over the ADO.NET
+
+_ **Using ADO.NET With SQL Server** _
+
+SQL Queries are checked during runtime.
+
+- Your SQL queries defined by ADO.NET's sqlcommand is executed by sql server database engine not by C# compiler.
+- When we writing sql queries using ADO.NET you might have noted that we write queries in double quotes, it means we have writing them as a string.
+- Strings are not compiled by C#, that string is sent to database engine and executed by that SQL server database engine.
