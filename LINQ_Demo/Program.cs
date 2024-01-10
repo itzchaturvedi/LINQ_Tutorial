@@ -7,7 +7,11 @@ class Program
         //Collection DataSource
         int[] age = { 16, 18, 30, 23, 12, 23, 13, 14, };
         //LINQ Query
-        var a = from i in age where i > 20 select i;
+        //var a = from i in age where i > 20 select i;
+
+
+        //ORDERBY
+        var a = from i in age where i > 20 orderby i descending select i;
 
         foreach (int item in a)
         {
