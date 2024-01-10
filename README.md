@@ -113,16 +113,16 @@ _ **Using ADO.NET With SQL Server** _
 
 - Because all work are done by the database engine so that's why C# compiler did not know what intelliSense should be displayed to a developer.
 
-1. It is not type safe.
+3. It is not type safe.
 
 - In this case, you need to know all the columns and its data types.
 
-1. Debugging of SQL statements will be a nightmare.
+4. Debugging of SQL statements will be a nightmare.
 
 - SQL queries are present in " " and are executed on database engine that's why no debugging is possible.
 - Because all the code will be sent to the database engine and then database engine verifies and provide you the errors which were occur during runtime.
 
-1. SQL queries is a combination of Object oriented and Relational.
+5. SQL queries is a combination of Object oriented and Relational.
 
 - "INSERT INTO PRODUCTS VALUES (' "+TextBox1.Text + " ',, "+ TextBox2.Text + " ');";
 
@@ -135,19 +135,19 @@ _ **USING LINQ WITH SQL SERVER** _
 - LINQ is purely defined in our DotNet languages like C# or VB.NET, it means you write LINQ queries in C# syntax.
 - It means LINQ queries are compiled in native language of a developer like C# or VB.NET.
 
-1. There is Intellisense support
+2. There is Intellisense support
 
 - LINQ queries are executed by C# compiler so the compiler knows the data types of Database objects and also displays appropriate intelliSense to a developer.
 
-1. It is type safe.
+3. It is type safe.
 
 - In this case, all the data types of columns are already known by the C# compiler that's why you have to pass only appropriate values.
 
-1. Debugging of LINQ queries is possible
+4. Debugging of LINQ queries is possible
 
 - LINQ queries are executed by C# compiler so the compiler knows the errors and displays it on compile time then we can easily debug.
 
-1. 100% object oriented code.
+5. 100% object oriented code.
 
 **When we used LINQ TO SQL** :_
  
