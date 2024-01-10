@@ -103,8 +103,63 @@ D – Delete – Delete
 
 _ **Using ADO.NET With SQL Server** _
 
-SQL Queries are checked during runtime.
+1. SQL Queries are checked during runtime.
+  - Your SQL queries defined by ADO.NET's sqlcommand is executed by sql server database engine not by C# compiler.
+  - When we writing sql queries using ADO.NET you might have noted that we write queries in double quotes, it means we have writing them as a string.
+  - Strings are not compiled by C#, that string is sent to database engine and executed by that SQL server database engine.
+  - Then database engine is going to verify that query is right or wrong, If query is wrong it will raise exception because exception are raised during runtime.
+  - As a C# developer, it is not a best practice to put the extra burden to database engine.
+2. No intelliSense support
 
-- Your SQL queries defined by ADO.NET's sqlcommand is executed by sql server database engine not by C# compiler.
-- When we writing sql queries using ADO.NET you might have noted that we write queries in double quotes, it means we have writing them as a string.
-- Strings are not compiled by C#, that string is sent to database engine and executed by that SQL server database engine.
+- Because all work are done by the database engine so that's why C# compiler did not know what intelliSense should be displayed to a developer.
+
+1. It is not type safe.
+
+- In this case, you need to know all the columns and its data types.
+
+1. Debugging of SQL statements will be a nightmare.
+
+- SQL queries are present in " " and are executed on database engine that's why no debugging is possible.
+- Because all the code will be sent to the database engine and then database engine verifies and provide you the errors which were occur during runtime.
+
+1. SQL queries is a combination of Object oriented and Relational.
+
+- "INSERT INTO PRODUCTS VALUES (' "+TextBox1.Text + " ',, "+ TextBox2.Text + " ');";
+
+_ **USING LINQ WITH SQL SERVER** _
+
+1. LINQ Queries are checked during compile time
+
+- LINQ queries are not compiled by database engine, it is compiled by C# because LINQ is integrated in C#.
+- LINQ queries are executed and verified by LINQ query engine which is provided in our DotNet Framework.
+- LINQ is purely defined in our DotNet languages like C# or VB.NET, it means you write LINQ queries in C# syntax.
+- It means LINQ queries are compiled in native language of a developer like C# or VB.NET.
+
+1. There is Intellisense support
+
+- LINQ queries are executed by C# compiler so the compiler knows the data types of Database objects and also displays appropriate intelliSense to a developer.
+
+1. It is type safe.
+
+- In this case, all the data types of columns are already known by the C# compiler that's why you have to pass only appropriate values.
+
+1. Debugging of LINQ queries is possible
+
+- LINQ queries are executed by C# compiler so the compiler knows the errors and displays it on compile time then we can easily debug.
+
+1. 100% object oriented code.
+
+**When we used LINQ TO SQL** :_
+ 
+ They converts as below tables
+
+| **Relational Type**     | **Object Oriented Type** |
+| ---                     | --- |
+| Table                   | Class |
+| Column                  | Property |
+| Row                     | Object/ Instance |
+| Stored Procedure        | Method |
+
+1. If you want to work with LINQ to SQL, First you have to convert or map all the relational obj of database into object oriented types. Which is possible with the above table.
+2. And This process is called **ORM (Object Relational Mapping)**
+3. To perform ORM we have to use a tool called OR Designer.
